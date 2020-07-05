@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="login-btn">
-      <input type="button" value="登录">
+      <input type="button" value="登录" @click="goHome">
     </div>
   </div>
 
@@ -41,7 +41,22 @@
 
 <script>
   export default {
-    name: "Login"
+    name: "Login",
+    data(){
+      return {
+
+      }
+    },
+    methods:{
+      goHome(){
+        this.$router.push({
+          path:'/dashboard'
+        })
+      }
+    },
+    created() {
+
+    }
   }
 </script>
 
@@ -76,7 +91,6 @@
 
           margin: 10px 0px;
           color: #e60012;
-
           span{
             vertical-align: middle;
             font-size: 14px;
@@ -120,7 +134,7 @@
        color: #333;
        span{
          font-size: 14px;
-         line-height: 10px;
+         margin-left: 5px;
        }
        a{
          color: #333;
@@ -133,7 +147,6 @@
      }
      .login-btn{
        margin-top: 15px;
-
        input{
          width: 100%;
          height: 50px;
